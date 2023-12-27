@@ -1,19 +1,22 @@
 import React from "react";
-import { PasswordProperties, initialProperties } from "../helpers";
+import {
+  PasswordPropertyState,
+  initialPasswordPropertyState,
+} from "../helpers";
 
 interface ContextState {
   passwordCopied: boolean;
   generatedPassword: string;
-  passwordProperties: PasswordProperties;
+  passwordProperties: PasswordPropertyState;
   setPasswordCopied: (passwordCopied: boolean) => void;
   setGeneratedPassword: (password: string) => void;
-  setPasswordProperties: (properties: PasswordProperties) => void;
+  setPasswordProperties: (properties: PasswordPropertyState) => void;
 }
 
 export const AppContext = React.createContext<ContextState>({
   passwordCopied: false,
   generatedPassword: "",
-  passwordProperties: initialProperties,
+  passwordProperties: initialPasswordPropertyState,
   setPasswordCopied() {},
   setGeneratedPassword() {},
   setPasswordProperties() {},

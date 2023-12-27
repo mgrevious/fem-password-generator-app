@@ -1,19 +1,22 @@
 export type PasswordStrength = 0 | 1 | 2 | 3 | 4;
 
-export type PasswordProperties = {
+export type CharacterRestriction = {
+  [index: string]: { checked: boolean; label: string };
+};
+
+export type PasswordPropertyState = {
   characterLength: number;
-  includeUpperCase: boolean;
-  includeLowerCase: boolean;
-  includeNumbers: boolean;
-  includeSymbols: boolean;
+  characterRestrictions: CharacterRestriction;
   passwordStrength: PasswordStrength;
 };
 
-export const initialProperties: PasswordProperties = {
+export const initialPasswordPropertyState: PasswordPropertyState = {
   characterLength: 0,
-  includeUpperCase: false,
-  includeLowerCase: false,
-  includeNumbers: false,
-  includeSymbols: false,
-  passwordStrength: 0,
+  characterRestrictions: {
+    includeUpperCase: { checked: false, label: "Include Uppercase Letters" },
+    includeLowerCase: { checked: false, label: "Include Lowercase Letters" },
+    includeNumbers: { checked: false, label: "Include Numbers" },
+    includeSymbols: { checked: false, label: "Include Symbols" },
+  },
+  passwordStrength: 3,
 };

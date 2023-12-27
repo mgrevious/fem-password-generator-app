@@ -7,9 +7,15 @@ const PasswordForm = () => {
   return (
     <form className="flex flex-col justify-center">
       <div>
-        <CharacterLength />
-        <CharacterTypes />
-        <StrengthMeter />
+        <div className="mb-6">
+          <CharacterLength />
+        </div>
+        <div className="mb-6">
+          <CharacterTypes />
+        </div>
+        <div className="mb-4">
+          <StrengthMeter />
+        </div>
         <button className="bg-primary h-14 w-full text-dark-gray flex items-center justify-center">
           <span className="pr-2 uppercase">Generate</span>
           <img src={ArrowRight} alt="arrow right" />
