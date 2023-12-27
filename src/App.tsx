@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import AppProvider from "./context/AppContext";
+import { initialProperties } from "./helpers";
+import PasswordForm from "./components/PasswordForm";
+import GeneratedPassword from "./components/GeneratedPassword";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [passwordCopied, setPasswordCopied] = useState(false);
+  const [generatedPassword, setGeneratedPassword] = useState("");
+  const [passwordProperties, setPasswordProperties] =
+    useState(initialProperties);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AppProvider
+      value={{
+        passwordCopied,
+        generatedPassword,
+        passwordProperties,
+        setPasswordCopied,
+        setGeneratedPassword,
+        setPasswordProperties,
+      }}
+    >
+      <main className="container w-full mx-auto">
+        {" "}
+        <div className="flex flex-col justify-center items-center mx-4">
+          <h1 className="text-lg text-light-gray">Password Generator</h1>
+          <section className="mb-4 bg-dark-gray p-4 w-full">
+            <GeneratedPassword />
+          </section>
+          <section className="mb-4 bg-dark-gray p-4 w-full">
+            <PasswordForm />
+          </section>
+        </div>
+      </main>
+    </AppProvider>
+  );
 }
 
-export default App
+export default App;
