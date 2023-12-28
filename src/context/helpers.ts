@@ -5,13 +5,13 @@ export type CharacterRestriction = {
 };
 
 export type PasswordPropertyState = {
-  characterLength: number;
+  passwordLength: number;
   characterRestrictions: CharacterRestriction;
   passwordStrength: PasswordStrength;
 };
 
 export const initialPasswordPropertyState: PasswordPropertyState = {
-  characterLength: 0,
+  passwordLength: 8,
   characterRestrictions: {
     includeUpperCase: { checked: false, label: "Include Uppercase Letters" },
     includeLowerCase: { checked: false, label: "Include Lowercase Letters" },

@@ -44,6 +44,65 @@ body {
   min-height: 100vh;
 }
 
+/* INPUT RANGE RESET */
+input[type="range"] {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #a4ffaf;
+  height: 0.5rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #a4ffaf;
+  height: 0.5rem;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"] {
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -10px; /* Centers thumb on the track */
+    background-color: #e6e5ea;
+    border-radius: 40px;
+    height: 28px;
+    width: 28px;
+  }
+  &:focus::-webkit-slider-thumb {
+    background-color: #18171f;
+    border: 1px solid #a4ffaf;
+    outline: 1px solid #a4ffaf;
+  }
+}
+
+/******** Firefox ********/
+input[type="range"] {
+  &::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 40px; /*Removes default border-radius that FF applies*/
+    background-color: #e6e5ea;
+    height: 28px;
+    width: 28px;
+  }
+  &:focus::-moz-range-thumb {
+    border: 1px solid #a4ffaf;
+    outline: 1px solid #a4ffaf;
+  }
+}
+
 /* TAILWIND CHECKBOX CHECK OVERRIDE */
 
 /* @layer components {

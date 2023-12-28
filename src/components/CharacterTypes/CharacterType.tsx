@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { produce } from "immer";
 import { AppContext } from "../../context/AppContext";
+import { validateRestrictions } from "../PasswordForm/helpers";
 
 interface Props {
   isChecked: boolean;
@@ -9,11 +10,11 @@ interface Props {
 }
 
 const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
-  const { passwordProperties, setPasswordProperties } = useContext(AppContext);
+  const { passwordProperties, setPasswordProperties, setError } =
+    useContext(AppContext);
 
   return (
     <div className="flex items-center mb-2">
-      {" "}
       <input
         checked={isChecked}
         id={name}
@@ -27,6 +28,8 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
           });
 
           setPasswordProperties(updatedState);
+          const result = validateRestrictions(updatedState);
+          setError(result);
         }}
       />
       <label className="pt-[2px]" htmlFor={name}>

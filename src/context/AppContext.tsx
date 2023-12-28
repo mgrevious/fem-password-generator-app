@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import {
-  PasswordPropertyState,
-  initialPasswordPropertyState,
-} from "../helpers";
+import { PasswordPropertyState, initialPasswordPropertyState } from "./helpers";
 
 interface ContextState {
+  error: string;
   passwordCopied: boolean;
   generatedPassword: string;
   passwordProperties: PasswordPropertyState;
   setPasswordCopied: (passwordCopied: boolean) => void;
   setGeneratedPassword: (password: string) => void;
   setPasswordProperties: (properties: PasswordPropertyState) => void;
+  setError: (error: string) => void;
 }
 
 export const AppContext = React.createContext<ContextState>({
+  error: "",
   passwordCopied: false,
   generatedPassword: "",
   passwordProperties: initialPasswordPropertyState,
   setPasswordCopied() {},
   setGeneratedPassword() {},
   setPasswordProperties() {},
+  setError() {},
 });
 
 interface ProviderProps {
@@ -32,16 +33,19 @@ const AppProvider: React.FC<ProviderProps> = ({ children }) => {
   const [passwordProperties, setPasswordProperties] = useState(
     initialPasswordPropertyState
   );
+  const [error, setError] = useState("");
 
   return (
     <AppContext.Provider
       value={{
+        error,
         passwordCopied,
         generatedPassword,
         passwordProperties,
         setPasswordCopied,
         setGeneratedPassword,
         setPasswordProperties,
+        setError,
       }}
     >
       {children}
