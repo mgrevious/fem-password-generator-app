@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   PasswordPropertyState,
   initialPasswordPropertyState,
@@ -24,11 +24,29 @@ export const AppContext = React.createContext<ContextState>({
 
 interface ProviderProps {
   children: React.ReactNode;
-  value: ContextState;
 }
 
-const AppProvider: React.FC<ProviderProps> = ({ children, value }) => (
-  <AppContext.Provider value={value}>{children}</AppContext.Provider>
-);
+const AppProvider: React.FC<ProviderProps> = ({ children }) => {
+  const [passwordCopied, setPasswordCopied] = useState(false);
+  const [generatedPassword, setGeneratedPassword] = useState("");
+  const [passwordProperties, setPasswordProperties] = useState(
+    initialPasswordPropertyState
+  );
+
+  return (
+    <AppContext.Provider
+      value={{
+        passwordCopied,
+        generatedPassword,
+        passwordProperties,
+        setPasswordCopied,
+        setGeneratedPassword,
+        setPasswordProperties,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};
 
 export default AppProvider;
