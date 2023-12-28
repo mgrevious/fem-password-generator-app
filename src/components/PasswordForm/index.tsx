@@ -10,10 +10,10 @@ const PasswordForm = () => {
         <div className="mb-6">
           <CharacterLength />
         </div>
-        <div className="mb-6">
+        <div className="mb-8">
           <CharacterTypes />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 lg:mb-8">
           <StrengthMeter />
         </div>
         <button className="bg-primary h-14 w-full text-dark-gray flex items-center justify-center">

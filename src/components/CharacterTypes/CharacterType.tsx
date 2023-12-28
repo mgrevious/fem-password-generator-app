@@ -20,7 +20,7 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
         aria-describedby={`${name}-description`}
         name={name}
         type="checkbox"
-        className="mr-3 h-4 w-4 border-2 border-off-white bg-dark-gray text-primary accent-dark-gray checked:border-primary  focus:ring-0 hover:cursor-pointer"
+        className="mr-3 lg:mr-6 h-5 w-5 border-2 border-off-white bg-dark-gray text-primary accent-dark-gray checked:border-primary  focus:ring-0 hover:cursor-pointer"
         onChange={(e) => {
           const updatedState = produce(passwordProperties, (state) => {
             state.characterRestrictions[name].checked = e.target.checked;
