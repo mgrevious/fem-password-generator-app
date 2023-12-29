@@ -18,10 +18,10 @@ export type PasswordPropertyState = {
 export const initialPasswordPropertyState: PasswordPropertyState = {
   passwordLength: 8,
   characterRestrictions: {
-    includeUpperCase: { checked: false, label: "Include Uppercase Letters" },
-    includeLowerCase: { checked: false, label: "Include Lowercase Letters" },
-    includeNumbers: { checked: false, label: "Include Numbers" },
-    includeSymbols: { checked: false, label: "Include Symbols" },
+    includeUpperCase: { checked: true, label: "Include Uppercase Letters" },
+    includeLowerCase: { checked: true, label: "Include Lowercase Letters" },
+    includeNumbers: { checked: true, label: "Include Numbers" },
+    includeSymbols: { checked: true, label: "Include Symbols" },
   },
   passwordStrength: 1,
 };

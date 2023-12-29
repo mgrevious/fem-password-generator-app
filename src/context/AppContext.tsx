@@ -4,6 +4,7 @@ import {
   PasswordPropertyState,
   initialPasswordPropertyState,
 } from "./helpers";
+import { generatePassword } from "../components/PasswordForm/helpers";
 
 interface ContextState {
   copyState: CopyState;
@@ -56,7 +57,10 @@ const AppProvider: React.FC<ProviderProps> = ({ children }) => {
         copyState,
         error,
         passwordCopied,
-        generatedPassword,
+        generatedPassword: generatePassword(
+          passwordProperties.characterRestrictions,
+          passwordProperties.passwordLength
+        ),
         passwordProperties,
         setPasswordCopied,
         setGeneratedPassword,

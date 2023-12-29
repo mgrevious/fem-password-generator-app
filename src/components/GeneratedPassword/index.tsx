@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CopyIcon from "../../assets/images/icon-copy.svg";
 import { AppContext } from "../../context/AppContext";
 
 const GeneratedPassword = () => {
   const { generatedPassword, copyState, setCopyState } = useContext(AppContext);
+
   return (
     <>
       {" "}
