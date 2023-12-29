@@ -17,7 +17,7 @@ const numbers = "0123456789";
 
 const symbols = "?!@#$%^&*_+-=";
 
-export const generatePassword = (
+export const createPassword = (
   restrictions: CharacterRestriction,
   length: number
 ) => {

@@ -1,9 +1,25 @@
 import { useContext, useEffect } from "react";
 import CopyIcon from "../../assets/images/icon-copy.svg";
 import { AppContext } from "../../context/AppContext";
+import { createPassword } from "../PasswordForm/helpers";
 
 const GeneratedPassword = () => {
-  const { generatedPassword, copyState, setCopyState } = useContext(AppContext);
+  const {
+    generatedPassword,
+    copyState,
+    setCopyState,
+    setGeneratedPassword,
+    passwordProperties,
+  } = useContext(AppContext);
+
+  useEffect(() => {
+    if (!generatedPassword) {
+      const { characterRestrictions, passwordLength } = passwordProperties;
+      setGeneratedPassword(
+        createPassword(characterRestrictions, passwordLength)
+      );
+    }
+  }, [generatedPassword, passwordProperties, setGeneratedPassword]);
 
   return (
     <>

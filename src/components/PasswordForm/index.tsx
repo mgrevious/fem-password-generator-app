@@ -4,7 +4,7 @@ import CharacterTypes from "../CharacterTypes";
 import StrengthMeter from "../StrengthMeter";
 import ArrowRight from "../../assets/images/icon-arrow-right.svg";
 import { AppContext } from "../../context/AppContext";
-import { generatePassword, validateRestrictions } from "./helpers";
+import { createPassword, validateRestrictions } from "./helpers";
 
 const PasswordForm = () => {
   const {
@@ -26,7 +26,7 @@ const PasswordForm = () => {
     if (result) {
       setError(result);
     } else {
-      const password = generatePassword(characterRestrictions, passwordLength);
+      const password = createPassword(characterRestrictions, passwordLength);
       setGeneratedPassword(password);
       setError("");
     }
