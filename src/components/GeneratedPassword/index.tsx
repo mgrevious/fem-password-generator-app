@@ -37,7 +37,9 @@ const GeneratedPassword = () => {
         </button>
       </div>
       {copyState.message && (
-        <p className={`mt-2 ${copyState.className}`}>{copyState.message}</p>
+        <p className={`mt-2 text-center ${copyState.className}`}>
+          {copyState.message}
+        </p>
       )}
     </>
   );
