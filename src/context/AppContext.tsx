@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { PasswordPropertyState, initialPasswordPropertyState } from "./helpers";
+import {
+  CopyState,
+  PasswordPropertyState,
+  initialPasswordPropertyState,
+} from "./helpers";
 
 interface ContextState {
+  copyState: CopyState;
   error: string;
   passwordCopied: boolean;
   generatedPassword: string;
@@ -10,9 +15,14 @@ interface ContextState {
   setGeneratedPassword: (password: string) => void;
   setPasswordProperties: (properties: PasswordPropertyState) => void;
   setError: (error: string) => void;
+  setCopyState: (copyState: CopyState) => void;
 }
 
 export const AppContext = React.createContext<ContextState>({
+  copyState: {
+    message: "",
+    className: "",
+  },
   error: "",
   passwordCopied: false,
   generatedPassword: "",
@@ -21,6 +31,7 @@ export const AppContext = React.createContext<ContextState>({
   setGeneratedPassword() {},
   setPasswordProperties() {},
   setError() {},
+  setCopyState() {},
 });
 
 interface ProviderProps {
@@ -34,10 +45,15 @@ const AppProvider: React.FC<ProviderProps> = ({ children }) => {
     initialPasswordPropertyState
   );
   const [error, setError] = useState("");
+  const [copyState, setCopyState] = useState<CopyState>({
+    message: "",
+    className: "",
+  });
 
   return (
     <AppContext.Provider
       value={{
+        copyState,
         error,
         passwordCopied,
         generatedPassword,
@@ -46,6 +62,7 @@ const AppProvider: React.FC<ProviderProps> = ({ children }) => {
         setGeneratedPassword,
         setPasswordProperties,
         setError,
+        setCopyState,
       }}
     >
       {children}

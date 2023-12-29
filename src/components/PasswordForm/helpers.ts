@@ -22,26 +22,26 @@ export const generateString = (
   length: number
 ) => {
   if (length === undefined || length <= 0 || !restrictions) {
-    return;
+    return "";
   }
 
   let result = "";
   let characters = "";
 
-  if (restrictions.includeLowerCase) {
+  if (restrictions.includeLowerCase.checked) {
     characters += lowercase;
   }
-  if (restrictions.includeUpperCase) {
+  if (restrictions.includeUpperCase.checked) {
     characters += uppercase;
   }
-  if (restrictions.includeNumbers) {
+  if (restrictions.includeNumbers.checked) {
     characters += numbers;
   }
-  if (restrictions.includeSymbols) {
+  if (restrictions.includeSymbols.checked) {
     characters += symbols;
   }
 
-  if (!characters) return;
+  if (!characters) return "";
 
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));

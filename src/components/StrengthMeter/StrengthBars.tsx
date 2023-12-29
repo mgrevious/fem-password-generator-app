@@ -1,5 +1,5 @@
 import React from "react";
-import { PasswordStrength } from "../../helpers";
+import { PasswordStrength } from "../../context/helpers";
 
 interface Props {
   strength: PasswordStrength;

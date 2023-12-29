@@ -7,22 +7,28 @@ import { AppContext } from "../../context/AppContext";
 import { generateString, validateRestrictions } from "./helpers";
 
 const PasswordForm = () => {
-  const { error, passwordProperties, setGeneratedPassword, setError } =
-    useContext(AppContext);
+  const {
+    error,
+    passwordProperties,
+    setGeneratedPassword,
+    setError,
+    setCopyState,
+  } = useContext(AppContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // generate password
     const { passwordLength, characterRestrictions } = passwordProperties;
-    const password = generateString(characterRestrictions, passwordLength);
-    if (password) {
-      const result = validateRestrictions(passwordProperties);
-      if (result) {
-        setError(result);
-      } else {
-        setError("");
-        setGeneratedPassword(password);
-      }
+    const result = validateRestrictions(passwordProperties);
+
+    setCopyState({ message: "", className: "" });
+
+    if (result) {
+      setError(result);
+    } else {
+      const password = generateString(characterRestrictions, passwordLength);
+      setGeneratedPassword(password);
+      setError("");
     }
   };
 

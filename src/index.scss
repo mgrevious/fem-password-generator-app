@@ -48,24 +48,40 @@ body {
 input[type="range"] {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  background: transparent;
+  // background: transparent;
   cursor: pointer;
 
   &:focus {
     outline: none;
   }
+
+  // &::-ms-fill-lower {
+  //   background: #a4ffaf;
+  // }
+
+  // &::-ms-fill-upper {
+  //   background: #18171f;
+  // }
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: #a4ffaf;
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: #18171f;
+  border-radius: 10px;
 }
 
 /***** Track Styles *****/
 /***** Chrome, Safari, Opera, and Edge Chromium *****/
 input[type="range"]::-webkit-slider-runnable-track {
-  background: #a4ffaf;
   height: 0.5rem;
 }
 
 /******** Firefox ********/
 input[type="range"]::-moz-range-track {
-  background: #a4ffaf;
   height: 0.5rem;
 }
 

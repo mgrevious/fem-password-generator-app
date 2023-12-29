@@ -4,6 +4,11 @@ export type CharacterRestriction = {
   [index: string]: { checked: boolean; label: string };
 };
 
+export interface CopyState {
+  message: string;
+  className: string;
+}
+
 export type PasswordPropertyState = {
   passwordLength: number;
   characterRestrictions: CharacterRestriction;
@@ -18,5 +23,5 @@ export const initialPasswordPropertyState: PasswordPropertyState = {
     includeNumbers: { checked: false, label: "Include Numbers" },
     includeSymbols: { checked: false, label: "Include Symbols" },
   },
-  passwordStrength: 3,
+  passwordStrength: 1,
 };
