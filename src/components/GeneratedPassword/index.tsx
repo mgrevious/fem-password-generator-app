@@ -23,7 +23,6 @@ const GeneratedPassword = () => {
 
   return (
     <>
-      {' '}
       <div className="flex justify-between items-center">
         <span id="generatedPassword" className="text-4xl break-all w-[90%]">
           {generatedPassword}

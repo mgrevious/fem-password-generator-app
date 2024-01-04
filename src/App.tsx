@@ -8,15 +8,15 @@ function App() {
       <div className="container w-full sm:max-w-[540px] mx-auto min-h-screen">
         <div className="flex flex-col justify-center items-center mx-5 min-h-screen">
           <header className="w-full">
-            <h1 className="text-2xl text-light-gray mb-6 text-center">
+            <h1 className="text-2xl text-light-gray mb-10 text-center">
               Password Generator
             </h1>
           </header>
           <main className="w-full">
-            <section className="mb-6 bg-dark-gray p-4 xl:px-8 xl:py-7 w-full">
+            <section className="mb-6 bg-dark-gray p-4 xl:px-8 xl:py-6 w-full">
               <GeneratedPassword />
             </section>
-            <section className="mb-4 bg-dark-gray p-4 xl:px-8 xl:py-7 w-full">
+            <section className="mb-4 bg-dark-gray p-4 xl:px-8 xl:py-6 w-full">
               <PasswordForm />
             </section>
           </main>

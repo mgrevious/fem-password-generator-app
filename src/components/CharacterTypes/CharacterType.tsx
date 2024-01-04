@@ -14,14 +14,14 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
     useContext(AppContext);
 
   return (
-    <div className="flex items-center mb-4">
+    <div className="flex items-center mb-3">
       <input
         checked={isChecked}
         id={name}
         aria-describedby={`${name}-description`}
         name={name}
         type="checkbox"
-        className="mr-3 lg:mr-6 h-5 w-5 border-2 border-off-white bg-dark-gray text-primary accent-dark-gray checked:border-primary  focus:ring-0 hover:cursor-pointer"
+        className="mr-3 lg:mr-6 h-5 w-5 border-2 border-off-white bg-dark-gray text-primary accent-dark-gray checked:border-primary focus:ring-0 hover:cursor-pointer"
         onChange={(e) => {
           const updatedState = produce(passwordProperties, (state) => {
             state.characterRestrictions[name].checked = e.target.checked;
