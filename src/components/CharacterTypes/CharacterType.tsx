@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { produce } from "immer";
-import { AppContext } from "../../context/AppContext";
-import { validateRestrictions } from "../PasswordForm/helpers";
+import React, { useContext } from 'react';
+import { produce } from 'immer';
+import { AppContext } from '../../context/AppContext';
+import { validateRestrictions } from '../PasswordForm/helpers';
 
 interface Props {
   isChecked: boolean;
@@ -14,7 +14,7 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
     useContext(AppContext);
 
   return (
-    <div className="flex items-center mb-2">
+    <div className="flex items-center mb-3">
       <input
         checked={isChecked}
         id={name}

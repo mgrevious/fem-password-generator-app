@@ -1,7 +1,7 @@
-import { useContext, useEffect } from "react";
-import CopyIcon from "../../assets/images/icon-copy.svg";
-import { AppContext } from "../../context/AppContext";
-import { createPassword } from "../PasswordForm/helpers";
+import { useContext, useEffect } from 'react';
+import CopyIcon from '../../assets/images/icon-copy.svg';
+import { AppContext } from '../../context/AppContext';
+import { createPassword } from '../PasswordForm/helpers';
 
 const GeneratedPassword = () => {
   const {
@@ -23,7 +23,7 @@ const GeneratedPassword = () => {
 
   return (
     <>
-      {" "}
+      {' '}
       <div className="flex justify-between items-center">
         <span id="generatedPassword" className="text-2xl break-all w-[90%]">
           {generatedPassword}
@@ -32,19 +32,19 @@ const GeneratedPassword = () => {
           className="w-[18px]"
           onClick={async () => {
             const password =
-              document.getElementById("generatedPassword")?.innerHTML;
+              document.getElementById('generatedPassword')?.innerHTML;
 
             if (password) {
               try {
                 await navigator.clipboard.writeText(password);
                 setCopyState({
-                  message: "Password copied!",
-                  className: "text-primary",
+                  message: 'Password copied!',
+                  className: 'text-primary',
                 });
               } catch (err) {
                 setCopyState({
-                  message: "Failed to copy password",
-                  className: "text-error",
+                  message: 'Failed to copy password',
+                  className: 'text-error',
                 });
               }
             }

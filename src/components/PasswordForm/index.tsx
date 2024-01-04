@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import CharacterLength from "../CharacterLength";
-import CharacterTypes from "../CharacterTypes";
-import StrengthMeter from "../StrengthMeter";
-import ArrowRight from "../../assets/images/icon-arrow-right.svg";
-import { AppContext } from "../../context/AppContext";
-import { createPassword, validateRestrictions } from "./helpers";
+import { useContext } from 'react';
+import CharacterLength from '../CharacterLength';
+import CharacterTypes from '../CharacterTypes';
+import StrengthMeter from '../StrengthMeter';
+import ArrowRight from '../../assets/images/icon-arrow-right.svg';
+import { AppContext } from '../../context/AppContext';
+import { createPassword, validateRestrictions } from './helpers';
 
 const PasswordForm = () => {
   const {
@@ -21,14 +21,14 @@ const PasswordForm = () => {
     const { passwordLength, characterRestrictions } = passwordProperties;
     const result = validateRestrictions(passwordProperties);
 
-    setCopyState({ message: "", className: "" });
+    setCopyState({ message: '', className: '' });
 
     if (result) {
       setError(result);
     } else {
       const password = createPassword(characterRestrictions, passwordLength);
       setGeneratedPassword(password);
-      setError("");
+      setError('');
     }
   };
 
@@ -49,7 +49,7 @@ const PasswordForm = () => {
           type="submit"
           className="bg-primary h-14 w-full text-dark-gray flex items-center justify-center"
         >
-          <span className="pr-2 uppercase">Generate</span>
+          <span className="pr-2 uppercase text-xl">Generate</span>
           <img src={ArrowRight} alt="arrow right" />
         </button>
       </div>

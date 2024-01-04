@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { produce } from "immer";
-import { AppContext } from "../../context/AppContext";
-import { getPasswordStrength } from "./helpers";
+import { useContext } from 'react';
+import { produce } from 'immer';
+import { AppContext } from '../../context/AppContext';
+import { getPasswordStrength } from './helpers';
 
 const CharacterLength = () => {
   const { passwordProperties, setPasswordProperties } = useContext(AppContext);
@@ -14,10 +14,12 @@ const CharacterLength = () => {
         <label className="text-[18px]" htmlFor="passwordLength">
           Character Length
         </label>
-        <span className="text-2xl">{passwordLength}</span>
+        <span className="font-bold text-[32px] text-primary">
+          {passwordLength}
+        </span>
       </div>
       <input
-        className="w-full"
+        className="w-full mb-6"
         style={{
           background: `linear-gradient(90deg, rgba(164,255,175,1) ${gradientStart}%, rgba(24,23,31,1) ${gradientStart}%)`,
         }}
