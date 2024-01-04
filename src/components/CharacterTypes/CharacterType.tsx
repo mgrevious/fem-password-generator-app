@@ -32,7 +32,7 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
           setError(result);
         }}
       />
-      <label className="pt-[2px] text-xl" htmlFor={name}>
+      <label className="pt-[2px] text-lg" htmlFor={name}>
         {label}
       </label>
     </div>

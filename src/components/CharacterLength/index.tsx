@@ -10,7 +10,7 @@ const CharacterLength = () => {
   const gradientStart = Math.floor((passwordLength / range) * 100) - 2;
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-4">
         <label className="text-[18px]" htmlFor="passwordLength">
           Character Length
         </label>
