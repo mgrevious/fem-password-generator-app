@@ -19,7 +19,7 @@ const CharacterLength = () => {
         </span>
       </div>
       <input
-        className="w-full mb-6"
+        className="w-full mb-4"
         style={{
           background: `linear-gradient(90deg, rgba(164,255,175,1) ${gradientStart}%, rgba(24,23,31,1) ${gradientStart}%)`,
         }}

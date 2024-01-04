@@ -13,10 +13,10 @@ function App() {
             </h1>
           </header>
           <main className="w-full">
-            <section className="mb-6 bg-dark-gray p-4 xl:px-8 xl:py-6 w-full">
+            <section className="mb-6 bg-dark-gray p-4 xl:p-8 w-full">
               <GeneratedPassword />
             </section>
-            <section className="mb-4 bg-dark-gray p-4 xl:px-8 xl:py-6 w-full">
+            <section className="mb-4 bg-dark-gray p-4 xl:p-8 w-full">
               <PasswordForm />
             </section>
           </main>
