@@ -6,9 +6,9 @@ function App() {
   return (
     <AppProvider>
       <div className="container w-full sm:max-w-[540px] mx-auto min-h-screen">
-        <div className="flex flex-col justify-center items-center mx-5 min-h-screen">
+        <div className="flex flex-col mt-[66px] sm:mt-[133px] items-center mx-5 min-h-screen">
           <header className="w-full">
-            <h1 className="text-2xl text-light-gray mb-10 text-center">
+            <h1 className="text-2xl text-light-gray mb-8 text-center">
               Password Generator
             </h1>
           </header>
