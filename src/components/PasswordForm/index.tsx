@@ -47,7 +47,7 @@ const PasswordForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-primary h-14 w-full text-dark-gray flex items-center justify-center"
+          className="bg-primary h-16 w-full text-dark-gray flex items-center justify-center"
         >
           <span className="pr-2 uppercase text-xl">Generate</span>
           <img src={ArrowRight} alt="arrow right" />

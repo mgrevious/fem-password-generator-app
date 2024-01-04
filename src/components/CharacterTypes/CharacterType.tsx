@@ -14,7 +14,7 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
     useContext(AppContext);
 
   return (
-    <div className="flex items-center mb-3">
+    <div className="flex items-center mb-4">
       <input
         checked={isChecked}
         id={name}
@@ -32,7 +32,7 @@ const CharacterType: React.FC<Props> = ({ isChecked, name, label }) => {
           setError(result);
         }}
       />
-      <label className="pt-[2px]" htmlFor={name}>
+      <label className="pt-[2px] text-xl" htmlFor={name}>
         {label}
       </label>
     </div>

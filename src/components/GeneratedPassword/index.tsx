@@ -25,11 +25,10 @@ const GeneratedPassword = () => {
     <>
       {' '}
       <div className="flex justify-between items-center">
-        <span id="generatedPassword" className="text-2xl break-all w-[90%]">
+        <span id="generatedPassword" className="text-4xl break-all w-[90%]">
           {generatedPassword}
         </span>
         <button
-          className="w-[18px]"
           onClick={async () => {
             const password =
               document.getElementById('generatedPassword')?.innerHTML;
@@ -50,7 +49,7 @@ const GeneratedPassword = () => {
             }
           }}
         >
-          <img src={CopyIcon} alt="copy icon" />
+          <img src={CopyIcon} alt="copy icon" className="w-[21px]" />
         </button>
       </div>
       {copyState.message && (
